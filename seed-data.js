@@ -1,49 +1,58 @@
 // seed.js
-import { PrismaClient } from '@prisma/client';
-
+import { PrismaClient } from "@prisma/client";
+import fs from "fs/promises";
 const prisma = new PrismaClient();
 
 async function main() {
-    // Delete all existing records (optional, for demo or reset purposes)
-    await prisma.product.deleteMany({});
-    await prisma.category.deleteMany({});
+  // Delete all existing records (optional, for demo or reset purposes)
+  await prisma.product.deleteMany({});
+  await prisma.category.deleteMany({});
 
-    // Create categories
-    const electronics = await prisma.category.create({
-        data: { name: "Electronics" }
-    });
-    const clothing = await prisma.category.create({
-        data: { name: "Clothing" }
-    });
+  // Read the JSON file
+  const jsonData = await fs.readFile("seed.json", "utf-8");
+  const data = JSON.parse(jsonData);
 
-    // Create products
-    await prisma.product.create({
+  // Create categories from JSON (assuming categories are in the JSON)
+  const categories = {};
+  for (const item of data) {
+    if (!categories[item.category.name]) {
+      const category = await prisma.category.create({
         data: {
-            name: "Laptop",
-            price: 1000,
-            category: {
-                connect: { id: electronics.id }
-            }
-        }
-    });
-    await prisma.product.create({
-        data: {
-            name: "T-Shirt",
-            price: 20,
-            category: {
-                connect: { id: clothing.id }
-            }
-        }
-    });
+          name: item.category.name,
+          image: item.category.image, // Add this if your category has an image field
+        },
+      });
+      categories[item.category.name] = category.id;
+    }
+  }
 
-    console.log("Data seeded successfully.");
+  // Create products
+  for (const item of data) {
+    await prisma.product.create({
+      data: {
+        name: item.title,
+        price: item.price,
+        description: item.description,
+        images: item.images,
+        brands: item.brand,
+        isStaffPick: item.isStaffPick,
+        // createdAt: new Date(item.creationAt),
+        // updatedAt: new Date(item.updatedAt),
+        category: {
+          connect: { id: categories[item.category.name] },
+        },
+      },
+    });
+  }
+
+  console.log("Data seeded successfully.");
 }
 
 main()
-    .catch(e => {
-        console.error(e);
-        process.exit(1);
-    })
-    .finally(async () => {
-        await prisma.$disconnect();
-    });
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });

@@ -1,0 +1,155 @@
+[
+  {
+    "title": "Super elegant Casual T-Shirt",
+    "price": 15,
+    "description": "A comfortable cotton t-shirt.",
+    "images": "https://images.pexels.com/photos/9902629/pexels-photo-9902629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "brand": "Zata",
+    "isStaffPick": true,
+    "creationAt": "2025-02-13T21:50:33.000Z",
+    "updatedAt": "2025-02-13T22:47:22.000Z",
+    "category": {
+      "id": 1,
+      "name": "Clothes",
+      "image": "https://i.imgur.com/QkIa5tT.jpeg",
+      "creationAt": "2025-02-13T18:05:18.000Z",
+      "updatedAt": "2025-02-13T18:05:18.000Z"
+    }
+  },
+  {
+    "title": "Elegant Denim jeans",
+    "price": 15,
+    "description": "Classic blue denim jeans with a perfect fit.",
+    "images": "https://images.pexels.com/photos/28994695/pexels-photo-28994695/free-photo-of-studio-the-sung-woost.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "brand": "Pull and Fox",
+    "isStaffPick": false,
+    "creationAt": "2025-02-13T21:57:48.000Z",
+    "updatedAt": "2025-02-13T22:49:58.000Z",
+    "category": {
+      "id": 1,
+      "name": "Clothes",
+      "image": "https://i.imgur.com/QkIa5tT.jpeg",
+      "creationAt": "2025-02-13T18:05:18.000Z",
+      "updatedAt": "2025-02-13T18:05:18.000Z"
+    }
+  },
+  {
+    "title": "Wireless headphones",
+    "price": 100,
+    "description": "Noise-canceling wireless earbuds with high-quality sound.",
+    "images": "https://images.pexels.com/photos/3394651/pexels-photo-3394651.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "brand": "Bose",
+    "isStaffPick": true,
+    "creationAt": "2025-02-13T22:33:26.000Z",
+    "updatedAt": "2025-02-13T22:33:26.000Z",
+    "category": {
+      "id": 18,
+      "name": "Electronics",
+      "image": "https://images.pexels.com/photos/3394651/pexels-photo-3394651.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "creationAt": "2025-02-13T22:30:53.000Z",
+      "updatedAt": "2025-02-13T22:30:53.000Z"
+    }
+  },
+  {
+    "title": "Stylish Denim Jacket",
+    "price": 45,
+    "description": "A fashionable denim jacket for all seasons.",
+    "images": "https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "brand": "Uniqlo",
+    "isStaffPick": true,
+    "creationAt": "2025-02-14T01:11:29.000Z",
+    "updatedAt": "2025-02-14T01:11:29.000Z",
+    "category": {
+      "id": 1,
+      "name": "Clothes",
+      "image": "https://i.imgur.com/QkIa5tT.jpeg",
+      "creationAt": "2025-02-13T18:05:18.000Z",
+      "updatedAt": "2025-02-13T18:05:18.000Z"
+    }
+  },
+  {
+    "title": "Elegant Purple Leather Loafers",
+    "price": 17,
+    "description": "Step into sophistication with our Elegant Purple Leather Loafers, perfect for making a bold statement. Crafted from high-quality leather with a vibrant purple finish, these shoes feature a classic loafer silhouette that's been updated with a contemporary twist. The comfortable slip-on design and durable soles ensure both style and functionality for the modern man.",
+    "brand": "LV",
+    "images": "https://i.imgur.com/Au8J9sX.jpeg",
+    "isStaffPick": false,
+    "creationAt": "2025-02-12T17:30:09.000Z",
+    "updatedAt": "2025-02-12T17:30:09.000Z",
+    "category": {
+      "id": 4,
+      "name": "Shoes",
+      "image": "https://i.imgur.com/qNOjJje.jpeg",
+      "creationAt": "2025-02-12T17:30:09.000Z",
+      "updatedAt": "2025-02-12T17:30:09.000Z"
+    }
+  },
+  {
+    "title": "Classic Blue Suede Casual Shoes",
+    "price": 39,
+    "description": "Step into comfort with our Classic Blue Suede Casual Shoes, perfect for everyday wear. These shoes feature a stylish blue suede upper, durable rubber soles for superior traction, and classic lace-up fronts for a snug fit. The sleek design pairs well with both jeans and chinos, making them a versatile addition to any wardrobe.",
+    "images": "https://i.imgur.com/sC0ztOB.jpeg",
+    "brand": "Nuke",
+    "isStaffPick": false,
+    "creationAt": "2025-02-12T17:30:09.000Z",
+    "updatedAt": "2025-02-12T17:30:09.000Z",
+    "category": {
+      "id": 4,
+      "name": "Shoes",
+      "image": "https://i.imgur.com/qNOjJje.jpeg",
+      "creationAt": "2025-02-12T17:30:09.000Z",
+      "updatedAt": "2025-02-12T17:30:09.000Z"
+    }
+  },
+  {
+    "title": "Sleek All-Terrain Go-Kart",
+    "price": 37,
+    "description": "Experience the thrill of outdoor adventures with our Sleek All-Terrain Go-Kart, featuring a durable frame, comfortable racing seat, and robust, large-tread tires perfect for handling a variety of terrains. Designed for fun-seekers of all ages, this go-kart is an ideal choice for backyard racing or exploring local trails.",
+    "images": "https://i.imgur.com/Ex5x3IU.jpg",
+    "brand": "Dechatlin",
+    "isStaffPick": false,
+    "creationAt": "2025-02-12T17:30:09.000Z",
+    "updatedAt": "2025-02-12T17:30:09.000Z",
+    "category": {
+      "id": 5,
+      "name": "Miscellaneous",
+      "image": "https://i.imgur.com/BG8J0Fj.jpg",
+      "creationAt": "2025-02-12T17:30:09.000Z",
+      "updatedAt": "2025-02-12T17:30:09.000Z"
+    }
+  },
+  {
+    "title": "Radiant Citrus Eau de Parfum",
+    "price": 73,
+    "description": "Indulge in the essence of summer with this vibrant citrus-scented Eau de Parfum. Encased in a sleek glass bottle with a bold orange cap, this fragrance embodies freshness and elegance. Perfect for daily wear, it's an olfactory delight that leaves a lasting, zesty impression.",
+    "images": "https://i.imgur.com/xPDwUb3.jpg",
+    "brand": "B-Star",
+    "isStaffPick": true,
+    "creationAt": "2025-02-12T17:30:09.000Z",
+    "updatedAt": "2025-02-12T17:30:09.000Z",
+    "category": {
+      "id": 5,
+      "name": "Miscellaneous",
+      "image": "https://i.imgur.com/BG8J0Fj.jpg",
+      "creationAt": "2025-02-12T17:30:09.000Z",
+      "updatedAt": "2025-02-12T17:30:09.000Z"
+    }
+  },
+  {
+    "title": "Sleek Olive Green Hardshell Carry-On Luggage",
+    "price": 48,
+    "description": "Travel in style with our durable hardshell carry-on, perfect for weekend getaways and business trips. This sleek olive green suitcase features smooth gliding wheels for easy airport navigation, a sturdy telescopic handle, and a secure zippered compartment to keep your belongings safe. Its compact size meets most airline overhead bin requirements, ensuring a hassle-free flying experience.",
+    "images": "https://i.imgur.com/jVfoZnP.jpg",
+    "brand": "Romawi",
+    "isStaffPick": false,
+    "creationAt": "2025-02-12T17:30:09.000Z",
+    "updatedAt": "2025-02-12T17:30:09.000Z",
+    "category": {
+      "id": 5,
+      "name": "Miscellaneous",
+      "image": "https://i.imgur.com/BG8J0Fj.jpg",
+      "creationAt": "2025-02-12T17:30:09.000Z",
+      "updatedAt": "2025-02-12T17:30:09.000Z"
+    }
+  }
+]

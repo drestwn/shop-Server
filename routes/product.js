@@ -1,32 +1,38 @@
 // routes/product.js
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from "@prisma/client";
 
 export default async function (fastify, prisma) {
-    fastify.get('/products', async (request, reply) => {
-        const products = await prisma.product.findMany({
-            include: { category: true }
-        });
-        return products;
+  fastify.get("/products", async (request, reply) => {
+    const products = await prisma.product.findMany({
+      include: { category: true },
     });
+    return products;
+  });
 
-    fastify.get('/categories/:categoryId/products', async (request, reply) => {
-        const { categoryId } = request.params;
-        const products = await prisma.product.findMany({
-            where: { categoryId: Number(categoryId) }
-        });
-        return products;
+  fastify.get("/product/:productId", async (request, reply) => {
+    const { productId } = request.params;
+    console.log(request.params);
+    const products = await prisma.product.findUnique({
+      where: { id: Number(productId) },
+      include: {
+        category: true, // Assuming you have a relationship set up
+      },
     });
+    return products;
+  });
 
-    fastify.post('/products', async (request, reply) => {
-        const { name, price, categoryId } = request.body;
-        if (!name || !price || !categoryId) {
-            return reply.status(400).send({ error: 'Name, price, and categoryId are required' });
-        }
-        const product = await prisma.product.create({
-            data: { name, price, categoryId: Number(categoryId) }
-        });
-        return reply.status(201).send(product);
+  fastify.post("/products", async (request, reply) => {
+    const { name, price, categoryId } = request.body;
+    if (!name || !price || !categoryId) {
+      return reply
+        .status(400)
+        .send({ error: "Name, price, and categoryId are required" });
+    }
+    const product = await prisma.product.create({
+      data: { name, price, categoryId: Number(categoryId) },
     });
+    return reply.status(201).send(product);
+  });
 
-    // Add more product routes here if needed
-};
+  // Add more product routes here if needed
+}

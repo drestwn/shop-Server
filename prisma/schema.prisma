@@ -20,16 +20,22 @@ model User {
   email     String   @unique
   createdAt DateTime @default(now())
 }
+
 model Product {
-  id        Int      @id @default(autoincrement())
-  name      String
-  category  Category @relation(fields: [categoryId], references: [id])
-  categoryId Int
-  price     Int
+  id          Int      @id @default(autoincrement())
+  name        String
+  category    Category @relation(fields: [categoryId], references: [id])
+  categoryId  Int
+  price       Int
+  description String
+  images      String
+  brands      String   @default("")
+  isStaffPick Boolean  @default(false)
 }
 
 model Category {
-  id        Int        @id @default(autoincrement())
-  name      String
-  products  Product[]  // This is the one-to-many relation field
+  id       Int       @id @default(autoincrement())
+  name     String
+  image    String
+  products Product[] // This is the one-to-many relation field
 }
