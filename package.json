@@ -50,6 +50,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "prisma migrate deploy",
+    "dev": "prisma migrate dev && node server.js",
     "start": "node server.js"
   },
   "keywords": [],

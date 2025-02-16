@@ -14,7 +14,7 @@ fastifyInstance.addHook("onRequest", (request, reply, done) => {
   if (request.method === "OPTIONS") {
     reply
       .code(204)
-      .header("Access-Control-Allow-Origin", "http://localhost:5431")
+      .header("Access-Control-Allow-Origin", process.env.CORS_URL)
       .header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS")
       .header("Access-Control-Allow-Headers", "Content-Type, Authorization")
       .header("Access-Control-Allow-Credentials", "true")
@@ -23,7 +23,7 @@ fastifyInstance.addHook("onRequest", (request, reply, done) => {
   }
 
   // For all other requests, set headers
-  reply.header("Access-Control-Allow-Origin", "http://localhost:5431");
+  reply.header("Access-Control-Allow-Origin", process.env.CORS_URL);
   reply.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
   reply.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
   reply.header("Access-Control-Allow-Credentials", "true");
@@ -40,10 +40,19 @@ fastifyInstance.setErrorHandler((error, request, reply) => {
   reply.status(error.statusCode || 500).send({ error: error.message });
 });
 
-// Run the server!
-try {
-  await fastifyInstance.listen({ port: 3000 });
-} catch (err) {
-  fastifyInstance.log.error(err);
-  process.exit(1);
-}
+// // Run the server!
+// try {
+//   await fastifyInstance.listen({ port: 3000 });
+// } catch (err) {
+//   fastifyInstance.log.error(err);
+//   process.exit(1);
+// }
+export default async (req, res) => {
+  try {
+    await prisma.$connect(); // Connect for this request
+    await fastifyInstance.ready();
+    fastifyInstance.server.emit("request", req, res);
+  } finally {
+    await prisma.$disconnect(); // Disconnect after handling the request
+  }
+};
