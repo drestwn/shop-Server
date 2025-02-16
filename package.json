@@ -3,8 +3,9 @@
   "type": "module",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "dependencies": {
+    "@fastify/cors": "^10.0.2",
     "@prisma/client": "^6.3.1",
     "abstract-logging": "^2.0.1",
     "ajv": "^8.17.1",
@@ -52,7 +53,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate": "prisma migrate deploy",
     "dev": "prisma migrate dev && node server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "npx prisma generate",
+    "postinstall": "prisma generate"
   },
   "keywords": [],
   "author": "",
