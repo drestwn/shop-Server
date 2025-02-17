@@ -53,18 +53,23 @@ package.json: Project dependencies and scripts
 
 **API Endpoints**
    Category
+   ```
 GET /categories: List all categories
 GET /categories/:id: Get a specific category
 POST /categories: Create a new category
+```
 
    Product
+   ```
 GET /products: List all products
 POST /products: Create a new product
+```
 
    User
+   ```
 GET /user: List all users
 GET /user/:id: Get spesific user
 POST /user: create new user profile
-   
+   ```
 
 This `README.md` provides a basic overview, setup instructions, and information about the project structure. Remember to update the repository URL, add actual commands for testing once you implement them, and include contribution guidelines and a license file if you decide to add those.
