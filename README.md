@@ -16,12 +16,14 @@ This is the backend for a store application, using:
 ### Installation
 
 1. **Clone the repository**
-   ```sh
+   ```
+   sh
    git clone https://github.com/drestwn/store-backend.git
    cd store-backend
    ```
 2. **Install dependencies**
-   ```npm install
+   ```
+   npm install
    # or
    yarn install
    ```
@@ -50,13 +52,19 @@ prisma/: Prisma schema and migration files
 package.json: Project dependencies and scripts
 
 **API Endpoints**
-Categories
+   Category
 GET /categories: List all categories
 GET /categories/:id: Get a specific category
 POST /categories: Create a new category
-Products
+
+   Product
 GET /products: List all products
-GET /categories/:categoryId/products: List products by category
 POST /products: Create a new product
+
+   User
+GET /user: List all users
+GET /user/:id: Get spesific user
+POST /user: create new user profile
+   
 
 This `README.md` provides a basic overview, setup instructions, and information about the project structure. Remember to update the repository URL, add actual commands for testing once you implement them, and include contribution guidelines and a license file if you decide to add those.
