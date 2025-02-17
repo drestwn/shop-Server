@@ -20,6 +20,4 @@ export default async function (fastify, prisma) {
     }
     return category;
   });
-
-  // Add more category routes here if needed
 }

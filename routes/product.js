@@ -1,5 +1,4 @@
 // routes/product.js
-import { PrismaClient } from "@prisma/client";
 
 export default async function (fastify, prisma) {
   fastify.get("/products", async (request, reply) => {
@@ -15,7 +14,7 @@ export default async function (fastify, prisma) {
     const products = await prisma.product.findUnique({
       where: { id: Number(productId) },
       include: {
-        category: true, // Assuming you have a relationship set up
+        category: true,
       },
     });
     return products;
@@ -33,6 +32,4 @@ export default async function (fastify, prisma) {
     });
     return reply.status(201).send(product);
   });
-
-  // Add more product routes here if needed
 }
